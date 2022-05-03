@@ -4,6 +4,7 @@ import {SafeAreaView, View, StyleSheet, ScrollView} from 'react-native';
 import HeaderTabs from '../components/HeaderTabs';
 import SearchBar from '../components/SearchBar';
 import Categories from '../components/Categories'; 
+import CategoryList from '../components/CategoryList'; 
 import RestaurantItems, {localRestaurants} from '../components/RestaurantItems';
 
 const YELP_API_KEY = "cm3vPTLPBbll63DJiO5Z7R46na6z8YQZwAYze0Z2078Re9FbVEEFgLX2vv4eCSdvJ_6sKbtrWqf3jJZhhVecI2QbIjqWTt5xqugv5mrRomko1YetKPgcx2vhlKusYXYx";
@@ -19,10 +20,13 @@ export default function Home() {
        <View style={{ backgroundColor:"white", padding: 25}}>
          <HeaderTabs />
          <SearchBar />
+         <CategoryList/>
        </View>
        <ScrollView showsVerticalScrollIndicator={false}>
-       <Categories />
-       <RestaurantItems restaurantData={restaurantData} />
+       
+        <View>
+          <RestaurantItems restaurantData={restaurantData} />
+        </View>
        </ScrollView>
     </SafeAreaView>
   );   

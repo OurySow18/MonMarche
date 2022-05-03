@@ -1,9 +1,10 @@
 import React from 'react';
-import { Text, Image, View, ScrollView, TouchableOpacity } from 'react-native';
+import { Text, Image, View, ScrollView, TouchableOpacity, Flatlist, Dimensions } from 'react-native';
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
+ 
 
 export const localRestaurants = [
-    {    name: "Beachside Bar", 
+    {    name: "Huile", 
          categories: ["Cafe", "Bar"],
          price: "$$",
          reviews: 1244,
@@ -30,22 +31,48 @@ export const localRestaurants = [
     {
         image: require("../assets/images/6.jpeg"),
         text: "Coffee & Tea"
-    } 
+    }, 
+    {
+        image: require("../assets/images/6.jpeg"),
+        text: "Coffee & Tea"
+    },
+    {
+        image: require("../assets/images/5.jpeg"),
+        text: "Deals"
+    }
 ];
 
+const {width} = Dimensions.get("screen");
 
 const RestaurantItems = props =>{
     return (
-    <TouchableOpacity activeOpacity={1} style={{ marginBottom: 30}}>
-        {props.restaurantData.map((restaurant, index) => (
+     
+    <TouchableOpacity activeOpacity={2} style={{ marginBottom: 30}}>
+        <View style={{        
+            flex: 1,     
+            flexDirection: 'row',
+            flexWrap: 'wrap',
+        }}>
+        {props.restaurantData.map((restaurant, index) => (             
              <View key={index} 
-                  style={{marginTop: 10, padding: 15, backgroundColor: "white"}}>
+                  style={{   
+                        display: 'flex',                          
+                        backgroundColor: "white",                        
+                        justifyContent:"space-between",
+                        height: 250,
+                        width: 180,             
+                        marginTop: 20, 
+                        marginLeft: 15, 
+                        padding: 15, 
+                    }}>
                     <RestaurantImage image={restaurant.image} />
                     <RestaurantInfo name={restaurant.name} rating={restaurant.rating} />
              </View>
+              
         ))}
-    </TouchableOpacity>
-          )
+        </View>
+    </TouchableOpacity> 
+    )
 }
 
 const RestaurantImage = (props) => (
