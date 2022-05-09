@@ -8,7 +8,7 @@ const SearchBar = props => {
     return (
         <View style={{ marginTop: 15, flexDirection: "row"}}>
             <GooglePlacesAutocomplete 
-                placeholder="Search" 
+                placeholder="Trouver un produit" 
                 styles={{
                     textInput: {
                         backgroundColor: "#eee",

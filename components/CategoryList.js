@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
 import { View, Text, StyleSheet, TouchableOpacity} from 'react-native'; 
-import COLORS from '../assets/consts/colors';
+import { GlobalColors } from '../assets/consts/colors';
 
 
-const categories = ['POPULAR', 'ORGANIC', 'INDOORS', 'SYNTHETIC'];
+const categories = ['HOME', 'DEJEUNER', 'CEREMONIE', 'ENFANT'];
 
   const CategoryList = () => {
       
@@ -32,15 +32,15 @@ const categories = ['POPULAR', 'ORGANIC', 'INDOORS', 'SYNTHETIC'];
     categoryContainer: {
       flexDirection: 'row',
       marginTop: 30,
-      marginBottom: 20,
+      marginBottom: 10,
       justifyContent: 'space-between',
     },
     categoryText: {fontSize: 16, color: 'grey', fontWeight: 'bold'},
     categoryTextSelected: {
-        color: COLORS.green,
+        color: '#00B761',
         paddingBottom: 5,
         borderBottomWidth: 2,
-        borderColor: COLORS.green
+        borderColor: '#00B761'
     }
 })
 

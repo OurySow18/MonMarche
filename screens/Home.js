@@ -1,33 +1,27 @@
 import React from 'react';
-import {SafeAreaView, View, StyleSheet, ScrollView} from 'react-native';
-
-import HeaderTabs from '../components/HeaderTabs';
-import SearchBar from '../components/SearchBar';
+import {SafeAreaView, View, StyleSheet, ScrollView, ActivityIndicator} from 'react-native';
+ 
+import SearchBar from '../components/SearchBar'; 
 import Categories from '../components/Categories'; 
 import CategoryList from '../components/CategoryList'; 
 import RestaurantItems, {localRestaurants} from '../components/RestaurantItems';
 
-const YELP_API_KEY = "cm3vPTLPBbll63DJiO5Z7R46na6z8YQZwAYze0Z2078Re9FbVEEFgLX2vv4eCSdvJ_6sKbtrWqf3jJZhhVecI2QbIjqWTt5xqugv5mrRomko1YetKPgcx2vhlKusYXYx";
-
 export default function Home() {
   const [restaurantData, setRestaurantData] = React.useState(localRestaurants);
 
-  const getRestaurantsFromYelp = () => {
-    const yelpUrl = `https://api.yelp.com/v3/businesses/search?term=restaurants&location=${city}`;
-  }
   return ( 
+    <View>
      <SafeAreaView>
-       <View style={{ backgroundColor:"white", padding: 25}}>
-         <HeaderTabs />
+       <View style={{ backgroundColor:"transparent", padding: 15}}>          
          <SearchBar />
          <CategoryList/>
        </View>
-       <ScrollView showsVerticalScrollIndicator={false}>
-       
+       <ScrollView showsVerticalScrollIndicator={false}>       
         <View>
           <RestaurantItems restaurantData={restaurantData} />
         </View>
        </ScrollView>
-    </SafeAreaView>
+     </SafeAreaView>
+    </View>
   );   
 }
