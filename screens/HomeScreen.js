@@ -1,7 +1,7 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'; 
 import Home from '../screens/Home';
 import DetailItems from '../screens/DetailItems';
-import { GlobalColors } from '../assets/consts/colors';  
+import { COLORS } from '../assets/consts/colors';  
 import AntDesign from "react-native-vector-icons/AntDesign"; 
 import Octicons from "react-native-vector-icons/Octicons"; 
   
@@ -15,10 +15,10 @@ function HomeScreen() {
 
   return (
     <Tab.Navigator screenOptions={{
-      headerStyle: { backgroundColor: GlobalColors.colors.accentColor},
+      headerStyle: { backgroundColor: '#ff6f00'},
       headerTintColor: 'white',
-      tabBarStyle: { backgroundColor: GlobalColors.colors.accentColor},
-      tabBarActiveTintColor:  GlobalColors.colors.white
+      tabBarStyle: { backgroundColor: '#ff6f00'},
+      tabBarActiveTintColor:  '#fff'
     }}>       
             <Tab.Screen 
                   name="Home" 

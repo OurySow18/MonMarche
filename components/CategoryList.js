@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import { View, Text, StyleSheet, TouchableOpacity} from 'react-native'; 
-import { GlobalColors } from '../assets/consts/colors';
+import { COLORS } from '../assets/consts/colors';
 
 
 const categories = ['HOME', 'DEJEUNER', 'CEREMONIE', 'ENFANT'];

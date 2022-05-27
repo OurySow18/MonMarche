@@ -8,6 +8,7 @@ import {
   ScrollView,
 } from 'react-native';
 import Logo from '../../assets/images/logo/Logo_1.png';
+import Monmarche from '../../assets/images/logo/Monmarche.png';
 import CustomInput from '../../components/SignIn/CustomInput';
 import CustomButton from '../../components/SignIn/CustomButton'; 
 import SocialSignInButtons from '../../components/SignIn/SocialSignInButtons';
@@ -37,7 +38,7 @@ const SignInScreen = () => {
     <ScrollView showsVerticalScrollIndicator={false}>
       <View style={styles.root}>
         <Image
-          source={Logo}
+          source={Monmarche}
           style={[styles.logo, {height: height * 0.3}]}
           resizeMode="contain"
         />

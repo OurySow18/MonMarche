@@ -9,6 +9,7 @@ import HomeScreen from './screens/HomeScreen';
 import Home from './screens/Home';
 import Onboarding from './components/onboarding/Onboarding'; 
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import DetailScreen from './screens/DetailScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -53,6 +54,7 @@ export default function App() {
           <SafeAreaView style={{backgroundColor:"#eee", flex: 2}}>
           <Stack.Navigator initialRouteName={startSeite}>
             <Stack.Screen name="Onboarding" component={Onboarding} />
+            <Stack.Screen name="DetailScreen" component={DetailScreen} />
             <Stack.Screen 
                   name="HomeScreen" 
                   component={HomeScreen}  

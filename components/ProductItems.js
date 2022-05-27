@@ -1,9 +1,10 @@
 import React from 'react';
-import { Text, Image, View, ScrollView, TouchableOpacity, Dimensions } from 'react-native';
+import { Text, Image, View, TouchableOpacity, Dimensions } from 'react-native';
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
+import {useNavigation} from '@react-navigation/core';
  
 
-export const localRestaurants = [
+export const localProducts = [
     {    id: 1,
          name: "Huile",
          price: "5$",
@@ -76,10 +77,20 @@ export const localRestaurants = [
 ];
  
 
-const RestaurantItems = props =>{
+const ProductItems = (item) =>{
+    const navigation = useNavigation();
+
+    const onDetails = () => {
+        navigation.navigate('DetailScreen', {productDetail: item});
+    };
+
     return (
      
-     <TouchableOpacity activeOpacity={2} style={{ marginBottom: 30}}>
+     <TouchableOpacity 
+            activeOpacity={2} 
+            style={{ marginBottom: 30}}
+            onPress={onDetails}
+            >
         <View style={{        
             flex: 1,     
             flexDirection: 'row',
@@ -87,7 +98,7 @@ const RestaurantItems = props =>{
             marginBottom: 60
         }}
         >
-        {props.restaurantData.map((restaurant, index) => (             
+        {item.productData.map((product, index) => (             
              <View key={index} 
                   style={{   
                         display: 'flex',                          
@@ -99,8 +110,8 @@ const RestaurantItems = props =>{
                         marginLeft: 15, 
                         padding: 15, 
                     }}>
-                    <RestaurantImage image={restaurant.image} />
-                    <RestaurantInfo name={restaurant.name} poids={restaurant.poids} rating={restaurant.rating} />
+                    <ProducttImage image={product.image} />
+                    <ProductInfo name={product.name} poids={product.poids} price={product.price} />
              </View>
               
         ))}
@@ -109,10 +120,10 @@ const RestaurantItems = props =>{
     )
 }
 
-const RestaurantImage = (props) => (
+const ProducttImage = (item) => (
     <>                
         <Image 
-            source={props.image}
+            source={item.image}
             style={{
                 width: "100%",
                 height: 180,
@@ -122,15 +133,15 @@ const RestaurantImage = (props) => (
     </>
 );
 
-const RestaurantInfo = (props) => (
+const ProductInfo = (item) => (
     <View   style={{
             flexDirection: "row",
             justifyContent: "space-between",
             alignItems: "center",
             marginTop: 10
         }}>
-        <Text style={{ fontSize: 15, fontWeight: "bold" }}> {props.name} </Text>
-        <Text style={{ fontSize: 15, fontWeight: "bold" }}> {props.poids} </Text>
+        <Text style={{ fontSize: 15, fontWeight: "bold" }}> {item.name} </Text>
+        <Text style={{ fontSize: 15, fontWeight: "bold" }}> {item.poids} </Text>
    
         <View
             style={{
@@ -141,9 +152,9 @@ const RestaurantInfo = (props) => (
                 alignItems: "center",
                 borderRadius: 15
             }}>
-            <Text>{props.rating}</Text>
+            <Text>{item.price}</Text>
         </View>
     </View>
 ); 
 
-export default RestaurantItems;
+export default ProductItems;

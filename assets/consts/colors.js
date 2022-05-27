@@ -1,5 +1,4 @@
-export const GlobalColors = {
-  colors: {
+ const COLORS = { 
   white: '#fff',
   dark: '#000',
   red: '#F52A2A',
@@ -7,6 +6,6 @@ export const GlobalColors = {
   green: '#00B761',
   primaryColor: '#4a148c',
   accentColor: '#ff6f00'
-  },
 };
- 
+
+export default COLORS;

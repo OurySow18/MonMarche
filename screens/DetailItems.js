@@ -1,11 +1,18 @@
-import React from 'react';
-import {View, Text} from 'react-native'
+import React, { useState} from 'react';
+import {View, Text, ScrollView} from 'react-native'
+import ProductItems, {localProduct} from '../components/ProductItems';
 
 function DetailItems() {
+  
+  const [productData, setProductData] = React.useState(localProduct);
+
   return ( 
+    
+    <ScrollView showsVerticalScrollIndicator={false}>  
       <View>
-         <Text> DetailItems </Text>
+       <Text>Hier kommt andere Producte</Text>
       </View>
+    </ScrollView>
   );
 }
 
